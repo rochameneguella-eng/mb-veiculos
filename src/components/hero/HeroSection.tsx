@@ -39,8 +39,52 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
 
+        {/* Powerful Hero Headline */}
+        <div className="text-center max-w-4xl mx-auto mb-10">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight">
+            Seu Próximo Carro com{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500">
+              Procedência Garantida
+            </span>
+          </h1>
+          <p className="mt-4 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
+            Veículos seminovos rigorosamente periciados em Sumaré - SP, com laudo cautelar 100% aprovado, garantia e as melhores taxas de financiamento.
+          </p>
+
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="#estoque"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-black font-extrabold text-sm shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-[1.02] transition-all flex items-center gap-2"
+            >
+              <Search className="w-4 h-4" />
+              Ver Estoque Disponível
+            </a>
+            <a
+              href="#financiamento"
+              className="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-sm transition-all flex items-center gap-2"
+            >
+              <BadgeDollarSign className="w-4 h-4 text-amber-400" />
+              Simular Financiamento
+            </a>
+            <a
+              href="#vender"
+              className="px-6 py-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 font-bold text-sm transition-all flex items-center gap-2"
+            >
+              <Zap className="w-4 h-4" />
+              Vender Meu Carro (PIX)
+            </a>
+          </div>
+        </div>
+
         {/* Hero Remotion Animated Showcase */}
-        <div className="mb-10">
+        <div className="mb-12">
+          <div className="flex items-center justify-between mb-3 px-2">
+            <span className="text-xs font-semibold uppercase tracking-wider text-amber-400/80 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
+              Showcase Interativo MB
+            </span>
+            <span className="text-xs text-gray-400">Qualidade • Procedência • Garantia</span>
+          </div>
           <HeroRemotionPlayer />
         </div>
 
