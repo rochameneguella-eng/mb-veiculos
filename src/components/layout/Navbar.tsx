@@ -9,7 +9,6 @@ import {
   MessageCircle,
   Menu,
   X,
-  ShieldCheck,
   ChevronRight,
   Clock,
   MapPin,
@@ -29,63 +28,63 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { label: "Estoque", href: "#estoque" },
-    { label: "Venda Seu Carro", href: "#vender" },
+    { label: "Venda seu carro", href: "#vender" },
     { label: "Financiamento", href: "#financiamento" },
     { label: "Vantagens", href: "#vantagens" },
     { label: "Sobre", href: "#sobre" },
-    { label: "Contato & Localização", href: "#contato" },
+    { label: "Contato e localização", href: "#contato" },
   ];
 
   return (
     <>
-      {/* Top Banner (Sumaré announcement & direct phone) */}
-      <div className="bg-[#0b0d14] text-gray-400 text-xs border-b border-white/5 py-2 px-4 hidden md:block">
+      {/* Top Banner (Address, hours and primary contact) */}
+      <div className="bg-[#0b0c10] text-[#9ca3af] text-xs border-b border-white/[0.06] py-2 px-4 hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-gray-300">
-              <MapPin className="w-3.5 h-3.5 text-amber-500" />
+            <span className="flex items-center gap-1.5 text-[#d1d5db]">
+              <MapPin className="w-3.5 h-3.5 text-[#d99b38]" />
               Av. Rebouças, 1820 - Sumaré / SP
             </span>
-            <span className="flex items-center gap-1.5 text-gray-400">
-              <Clock className="w-3.5 h-3.5 text-amber-500" />
-              Seg a Sex: 08:30 às 18:00 | Sáb: 08:30 às 13:00
+            <span className="flex items-center gap-1.5 text-[#9ca3af]">
+              <Clock className="w-3.5 h-3.5 text-[#9ca3af]" />
+              Seg a sex: 08:30 às 18:00 | Sáb: 08:30 às 13:00
             </span>
           </div>
           <div className="flex items-center gap-4">
             <a
               href={`tel:${STORE_INFO.phonePrimary.replace(/\D/g, "")}`}
-              className="flex items-center gap-1.5 hover:text-amber-400 transition"
+              className="flex items-center gap-1.5 text-[#d1d5db] hover:text-white transition-colors"
             >
-              <Phone className="w-3.5 h-3.5 text-amber-500" />
-              <span>{STORE_INFO.phonePrimary}</span>
+              <Phone className="w-3.5 h-3.5 text-[#9ca3af]" />
+              <span className="tabular-nums">{STORE_INFO.phonePrimary}</span>
             </a>
-            <span className="text-gray-600">|</span>
-            <span className="text-emerald-400 flex items-center gap-1 font-medium">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              Plantão WhatsApp Ativo
+            <span className="text-[#374151]">|</span>
+            <span className="text-[#10b981] flex items-center gap-1.5 font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+              Atendimento WhatsApp
             </span>
           </div>
         </div>
       </div>
 
-      {/* Main Sticky Navbar */}
+      {/* Main Header */}
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+        className={`sticky top-0 z-50 transition-[background-color,border-color,padding] duration-150 ${
           isScrolled
-            ? "bg-[#090a0f]/90 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/40 py-3"
-            : "bg-transparent py-4 border-b border-white/5"
+            ? "bg-[#0d0f12]/95 backdrop-blur-md border-b border-white/[0.08] py-3"
+            : "bg-transparent py-4 border-b border-white/[0.05]"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo MB Veículos (Original da Loja Física) */}
-          <a href="#" className="flex items-center group">
-            <div className="bg-white px-3.5 py-1.5 rounded-xl shadow-md border border-white/20 hover:bg-gray-50 transition flex items-center">
+          {/* Logo MB Veículos */}
+          <a href="#" className="flex items-center">
+            <div className="bg-white px-3 py-1.5 rounded-lg border border-white/20 hover:bg-neutral-100 transition-colors flex items-center">
               <Image
                 src="/logo-mb-veiculos.png"
                 alt="MB Veículos - Sumaré"
-                width={170}
-                height={35}
-                className="h-8 sm:h-9 w-auto object-contain"
+                width={150}
+                height={32}
+                className="h-7 sm:h-8 w-auto object-contain"
                 priority
               />
             </div>
@@ -97,78 +96,78 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-gray-300 hover:text-amber-400 transition-colors"
+                className="text-sm text-[#9ca3af] hover:text-white transition-colors font-medium"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* Action CTA & WhatsApp */}
+          {/* Action Buttons */}
           <div className="hidden sm:flex items-center gap-3">
             <a
               href={`https://wa.me/${STORE_INFO.whatsappNumber}?text=${encodeURIComponent(
-                "Olá! Acessei o site da MB Veículos e gostaria de tirar uma dúvida com um consultor."
+                "Olá, gostaria de falar com um consultor da MB Veículos."
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-semibold text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-900/30 hover:shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 bg-[#1a1e26] hover:bg-[#232733] text-[#d1d5db] hover:text-white font-medium text-xs px-3.5 py-2 rounded-lg border border-white/[0.08] transition-colors"
             >
-              <MessageCircle className="w-4 h-4 fill-white" />
+              <MessageCircle className="w-3.5 h-3.5 text-[#10b981]" />
               <span>WhatsApp</span>
             </a>
 
             <a
               href="#estoque"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30 transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-1.5 bg-[#d99b38] hover:bg-[#e4a844] text-[#0d0f12] font-semibold text-xs px-3.5 py-2 rounded-lg transition-colors"
             >
-              <Car className="w-4 h-4" />
-              <span>Ver Estoque</span>
+              <Car className="w-3.5 h-3.5" />
+              <span>Ver estoque</span>
             </a>
           </div>
 
-          {/* Mobile Menu Toggle Button */}
+          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-gray-300 hover:text-white focus:outline-none"
-            aria-label="Toggle menu"
+            className="lg:hidden p-2 text-[#9ca3af] hover:text-white focus:outline-none"
+            aria-label="Abrir menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#0e1018] border-b border-white/10 px-6 py-6 space-y-4">
-            <nav className="flex flex-col space-y-3">
+          <div className="lg:hidden bg-[#0d0f12] border-b border-white/[0.08] px-5 py-5 space-y-4">
+            <nav className="flex flex-col space-y-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-base font-medium text-gray-200 hover:text-amber-400 flex items-center justify-between py-2 border-b border-white/5"
+                  className="text-sm font-medium text-[#d1d5db] hover:text-white flex items-center justify-between py-2.5 border-b border-white/[0.04]"
                 >
                   <span>{link.label}</span>
-                  <ChevronRight className="w-4 h-4 text-gray-500" />
+                  <ChevronRight className="w-4 h-4 text-[#6b7280]" />
                 </a>
               ))}
             </nav>
 
-            <div className="pt-2 flex flex-col gap-3">
+            <div className="pt-2 flex flex-col gap-2">
               <a
                 href={`https://wa.me/${STORE_INFO.whatsappNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 bg-emerald-600 text-white text-center font-bold rounded-xl flex items-center justify-center gap-2"
+                className="w-full py-2.5 bg-[#10b981] hover:bg-[#059669] text-white text-center font-medium text-xs rounded-lg flex items-center justify-center gap-2 transition-colors"
               >
-                <MessageCircle className="w-5 h-5 fill-white" />
+                <MessageCircle className="w-4 h-4" />
                 Falar pelo WhatsApp
               </a>
               <a
                 href={`tel:${STORE_INFO.phonePrimary.replace(/\D/g, "")}`}
-                className="w-full py-3 bg-white/5 border border-white/10 text-gray-200 text-center font-medium rounded-xl flex items-center justify-center gap-2"
+                className="w-full py-2.5 bg-[#13161c] border border-white/[0.08] text-[#d1d5db] text-center font-medium text-xs rounded-lg flex items-center justify-center gap-2 transition-colors"
               >
-                <Phone className="w-4 h-4 text-amber-500" />
+                <Phone className="w-3.5 h-3.5 text-[#9ca3af]" />
                 Ligar ({STORE_INFO.phonePrimary})
               </a>
             </div>

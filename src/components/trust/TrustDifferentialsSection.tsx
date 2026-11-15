@@ -8,94 +8,95 @@ import {
   BadgeDollarSign,
   Repeat,
   HeartHandshake,
-  CheckCircle,
 } from "lucide-react";
 
 export const TrustDifferentialsSection: React.FC = () => {
   const differentials = [
     {
       icon: ShieldCheck,
-      title: "Laudo Cautelar 100% Aprovado",
+      title: "Laudo cautelar 100% aprovado",
       description:
-        "Todos os nossos veículos passam por rigorosa perícia técnica. Garantia contra sinistros, histórico de leilão e adulterações estruturais.",
-      highlight: "Perícia Certificada",
+        "Todos os nossos veículos passam por perícia técnica especializada. Garantia contra sinistros, histórico de leilão ou adulterações estruturais.",
+      highlight: "Perícia certificada",
     },
     {
       icon: Wrench,
-      title: "Revisão de 100+ Itens",
+      title: "Revisão preventiva completa",
       description:
-        "Inspeção minuciosa de suspensão, freios, parte elétrica, ar-condicionado e fluidos antes de qualquer entrega.",
-      highlight: "Pronto para Rodar",
+        "Inspeção técnica de suspensão, freios, parte elétrica, ar-condicionado e fluidos antes de qualquer entrega.",
+      highlight: "Pronto para rodar",
     },
     {
       icon: FileCheck2,
-      title: "Garantia Mecânica Completa",
+      title: "Garantia mecânica formalizada",
       description:
-        "Garantia por escrito de motor e câmbio, com possibilidade de extensão de cobertura para sua total segurança.",
-      highlight: "Tranquilidade Total",
+        "Garantia por escrito de motor e câmbio, com suporte técnico ágil e possibilidade de cobertura estendida.",
+      highlight: "Segurança total",
     },
     {
       icon: Repeat,
-      title: "A Melhor Avaliação no Seu Usado",
+      title: "Avaliação justa no seu usado",
       description:
-        "Pagamos preço justo pelo seu seminovo na troca ou na compra direta. Aceitamos veículos como entrada com opção de troca com troco.",
-      highlight: "Avaliação Justa",
+        "Proposta transparente com base no mercado real para troca ou compra direta. Opção de troca com troco na hora.",
+      highlight: "Troca com troco",
     },
     {
       icon: BadgeDollarSign,
-      title: "Taxas de Financiamento Exclusivas",
+      title: "Taxas diretas com bancos parceiros",
       description:
-        "Parceria estratégica com os maiores bancos (Santander, Itaú, BV) permitindo aprovação rápida e prazos de até 60 parcelas.",
+        "Integração com Santander, Itaú e BV Financeira para agilidade na análise de crédito e prazos em até 60 parcelas.",
       highlight: "Até 60x",
     },
     {
       icon: HeartHandshake,
-      title: "Atendimento Consultivo e Honesto",
+      title: "Atendimento consultivo e transparente",
       description:
-        "Mais de 16 anos construindo amizades e relações duradouras com nossos clientes em Sumaré e em todo o interior paulista.",
-      highlight: "16+ Anos em Sumaré",
+        "Mais de 16 anos atuando com respeito, clareza e credibilidade junto aos clientes de Sumaré e da Região Metropolitana de Campinas.",
+      highlight: "16+ anos em Sumaré",
     },
   ];
 
   return (
-    <section id="vantagens" className="py-20 bg-[#0a0b10] border-t border-white/5 relative">
+    <section id="vantagens" className="py-16 border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-            <CheckCircle className="w-3.5 h-3.5" />
-            Padrão de Excelência MB
+        <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#161a22] border border-white/[0.08] text-xs text-[#9ca3af]">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#d99b38]" />
+            <span>Padrão de qualidade</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-            Por Que Escolher a MB Veículos?
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            Por que escolher a MB Veículos
           </h2>
-          <p className="text-gray-400 text-base mt-2">
-            Comprar ou vender um carro é uma decisão importante. Veja como garantimos segurança e transparência em cada etapa.
+          <p className="text-[#9ca3af] text-sm">
+            Comprar ou vender um automóvel exige segurança. Conheça os pilares que garantem tranquilidade em cada negociação.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {differentials.map((diff, index) => {
             const Icon = diff.icon;
             return (
               <div
                 key={index}
-                className="group p-6 rounded-2xl bg-gradient-to-b from-[#13151f] to-[#0d0e14] border border-white/5 hover:border-amber-500/30 shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="p-5 rounded-xl bg-[#13161c] border border-white/[0.08] hover:border-white/[0.16] transition-colors flex flex-col justify-between space-y-4"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6" />
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-10 h-10 rounded-lg bg-[#1a1e26] border border-white/[0.06] flex items-center justify-center text-[#d99b38]">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <span className="text-[11px] font-medium text-[#9ca3af] bg-[#0d0f12] px-2.5 py-1 rounded border border-white/[0.06]">
+                      {diff.highlight}
+                    </span>
                   </div>
-                  <span className="text-[11px] font-bold text-amber-400/90 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20">
-                    {diff.highlight}
-                  </span>
-                </div>
 
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
-                  {diff.title}
-                </h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  {diff.description}
-                </p>
+                  <h3 className="text-base font-bold text-white mb-1.5">
+                    {diff.title}
+                  </h3>
+                  <p className="text-xs text-[#9ca3af] leading-relaxed">
+                    {diff.description}
+                  </p>
+                </div>
               </div>
             );
           })}

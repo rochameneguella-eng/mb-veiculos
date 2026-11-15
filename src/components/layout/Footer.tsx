@@ -18,135 +18,136 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#050608] text-gray-400 pt-16 pb-12 border-t border-white/10 relative">
+    <footer className="bg-[#0b0c10] text-[#9ca3af] pt-14 pb-10 border-t border-white/[0.06] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           {/* Col 1: Brand & Slogan */}
-          <div className="space-y-4">
-            <div className="inline-block bg-white px-3.5 py-1.5 rounded-xl shadow-md border border-white/20">
+          <div className="space-y-3.5">
+            <div className="inline-block bg-white px-3 py-1.5 rounded-lg border border-white/20">
               <Image
                 src="/logo-mb-veiculos.png"
                 alt="MB Veículos - Sumaré"
-                width={160}
-                height={35}
-                className="h-8 w-auto object-contain"
+                width={140}
+                height={30}
+                className="h-7 w-auto object-contain"
               />
             </div>
 
-            <p className="text-xs text-gray-400 leading-relaxed">
-              Tradição, transparência e segurança na compra e venda de veículos seminovos. Laudo cautelar pericial aprovado e as melhores condições de financiamento do interior paulista.
+            <p className="text-xs text-[#9ca3af] leading-relaxed">
+              Tradição, transparência e segurança na compra, venda e troca de veículos seminovos. Laudo cautelar pericial aprovado e suporte direto na loja física em Sumaré.
             </p>
 
-            <div className="flex items-center gap-2 pt-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20">
+            <div className="flex items-center gap-2 pt-1">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#13161c] text-[#10b981] text-xs font-medium border border-white/[0.06]">
                 <ShieldCheck className="w-3.5 h-3.5" />
-                Loja Verificada
+                Loja física verificada
               </span>
             </div>
           </div>
 
           {/* Col 2: Navigation Links */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-              Navegação Rápida
-            </h4>
+            <h3 className="text-xs font-semibold text-white mb-3">
+              Navegação rápida
+            </h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <a href="#estoque" className="hover:text-amber-400 transition">
-                  Estoque de Seminovos
+                <a href="#estoque" className="hover:text-white transition-colors">
+                  Estoque de seminovos
                 </a>
               </li>
               <li>
-                <a href="#vender" className="hover:text-amber-400 transition">
-                  Venda ou Troque Seu Veículo
+                <a href="#vender" className="hover:text-white transition-colors">
+                  Venda ou troque seu veículo
                 </a>
               </li>
               <li>
-                <a href="#financiamento" className="hover:text-amber-400 transition">
-                  Simulação de Financiamento
+                <a href="#financiamento" className="hover:text-white transition-colors">
+                  Simulação de financiamento
                 </a>
               </li>
               <li>
-                <a href="#vantagens" className="hover:text-amber-400 transition">
-                  Diferenciais & Laudo Cautelar
+                <a href="#vantagens" className="hover:text-white transition-colors">
+                  Diferenciais e laudo cautelar
                 </a>
               </li>
               <li>
-                <a href="#sobre" className="hover:text-amber-400 transition">
+                <a href="#sobre" className="hover:text-white transition-colors">
                   Sobre a MB Veículos
                 </a>
               </li>
               <li>
-                <a href="#contato" className="hover:text-amber-400 transition">
-                  Localização e Horários
+                <a href="#contato" className="hover:text-white transition-colors">
+                  Localização e horários
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Legal & Banking Partners */}
+          {/* Col 3: Banking Partners */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-              Financeiras Parceiras
-            </h4>
-            <ul className="space-y-2 text-xs text-gray-400">
-              <li>• Santander Financiamentos</li>
-              <li>• BV Financeira</li>
-              <li>• Itaú Veículos</li>
-              <li>• Bradesco Financiamentos</li>
-              <li>• Banco PAN & Safra</li>
+            <h3 className="text-xs font-semibold text-white mb-3">
+              Financeiras parceiras
+            </h3>
+            <ul className="space-y-1.5 text-xs text-[#9ca3af]">
+              <li>Santander Financiamentos</li>
+              <li>BV Financeira</li>
+              <li>Itaú Veículos</li>
+              <li>Bradesco Financiamentos</li>
+              <li>Banco PAN</li>
             </ul>
 
-            <div className="mt-6">
-              <span className="text-[11px] text-gray-500 block">
-                Financiamentos sujeitos à análise de crédito pelos bancos correspondentes.
+            <div className="mt-4">
+              <span className="text-[11px] text-[#6b7280] block">
+                Financiamentos sujeitos à análise e aprovação de crédito pelas instituições financeiras.
               </span>
             </div>
           </div>
 
           {/* Col 4: Store Info & Address */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
+          <div className="space-y-2.5">
+            <h3 className="text-xs font-semibold text-white mb-3">
               Unidade Sumaré
-            </h4>
-            <div className="flex items-start gap-2 text-xs text-gray-300">
-              <MapPin className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+            </h3>
+            <div className="flex items-start gap-2 text-xs text-[#d1d5db]">
+              <MapPin className="w-4 h-4 text-[#9ca3af] shrink-0 mt-0.5" />
               <span>{STORE_INFO.address}, Sumaré - SP</span>
             </div>
-            <div className="flex items-center gap-2 text-xs text-gray-300">
-              <Phone className="w-4 h-4 text-amber-500 shrink-0" />
-              <span>{STORE_INFO.phonePrimary} / {STORE_INFO.phoneSecondary}</span>
+            <div className="flex items-center gap-2 text-xs text-[#d1d5db]">
+              <Phone className="w-4 h-4 text-[#9ca3af] shrink-0" />
+              <span className="tabular-nums">{STORE_INFO.phonePrimary} / {STORE_INFO.phoneSecondary}</span>
             </div>
-            <div className="flex items-center gap-2 text-xs text-gray-300">
-              <Mail className="w-4 h-4 text-amber-500 shrink-0" />
+            <div className="flex items-center gap-2 text-xs text-[#d1d5db]">
+              <Mail className="w-4 h-4 text-[#9ca3af] shrink-0" />
               <span>{STORE_INFO.email}</span>
             </div>
+
             <div className="pt-2">
               <a
                 href={`https://wa.me/${STORE_INFO.whatsappNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-emerald-400 text-xs font-bold flex items-center justify-center gap-2 border border-white/5 transition"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#13161c] hover:bg-[#1a1e26] border border-white/[0.08] text-xs text-[#10b981] font-medium transition-colors"
               >
-                <MessageCircle className="w-4 h-4 fill-emerald-400" />
-                Plantão WhatsApp
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>WhatsApp de plantão</span>
               </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom copyright and to-top button */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        {/* Bottom Bar: Copyright & Back to Top */}
+        <div className="pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between text-xs text-[#6b7280] gap-4">
           <p>
-            © {new Date().getFullYear()} MB Veículos Sumaré. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} MB Veículos. Todos os direitos reservados. CNPJ regularizado em Sumaré - SP.
           </p>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-gray-400 hover:text-amber-400 transition"
+            className="flex items-center gap-1.5 text-[#9ca3af] hover:text-white transition-colors"
           >
             <span>Voltar ao topo</span>
-            <ArrowUp className="w-4 h-4" />
+            <ArrowUp className="w-3.5 h-3.5" />
           </button>
         </div>
       </div>

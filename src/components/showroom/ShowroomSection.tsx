@@ -14,7 +14,7 @@ import {
   Eye,
   SlidersHorizontal,
   Search,
-  Sparkles,
+  ShieldCheck,
 } from "lucide-react";
 
 interface ShowroomSectionProps {
@@ -30,12 +30,12 @@ export const ShowroomSection: React.FC<ShowroomSectionProps> = ({
   const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
 
   const categories: { label: string; value: VehicleCategory }[] = [
-    { label: "Todos os Carros", value: "todos" },
+    { label: "Todos os carros", value: "todos" },
     { label: "SUVs", value: "suv" },
     { label: "Sedãs", value: "sedan" },
     { label: "Hatches", value: "hatch" },
-    { label: "Picapes & 4x4", value: "picape" },
-    { label: "Premium / Esportivos", value: "premium" },
+    { label: "Picapes e 4x4", value: "picape" },
+    { label: "Premium", value: "premium" },
   ];
 
   const filteredVehicles = useMemo(() => {
@@ -52,44 +52,40 @@ export const ShowroomSection: React.FC<ShowroomSectionProps> = ({
   }, [selectedCategory, searchTerm, maxPrice]);
 
   return (
-    <section id="estoque" className="py-20 relative">
-      {/* Background soft ambient accents */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
-
+    <section id="estoque" className="py-16 border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-              <Sparkles className="w-3.5 h-3.5" />
-              Estoque Curado • Laudo Cautelar Aprovado
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#161a22] border border-white/[0.08] text-xs text-[#9ca3af]">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#d99b38]" />
+              <span>Estoque inspecionado com laudo cautelar</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-              Seminovos Selecionados
+            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              Seminovos selecionados
             </h2>
-            <p className="text-gray-400 text-base max-w-xl mt-2">
-              Veículos periciados, revisados e prontos para rodar com garantia de procedência.
+            <p className="text-[#9ca3af] text-sm max-w-xl">
+              Veículos periciados, revisados e disponíveis para test-drive em nossa loja física em Sumaré.
             </p>
           </div>
 
-          <div className="text-sm text-gray-400">
-            Exibindo <span className="text-amber-400 font-bold">{filteredVehicles.length}</span> veículos disponíveis
+          <div className="text-xs text-[#9ca3af]">
+            Exibindo <span className="text-white font-semibold tabular-nums">{filteredVehicles.length}</span> veículos disponíveis
           </div>
         </div>
 
         {/* Filter Bar & Controls */}
-        <div className="bg-[#12141c] border border-white/10 rounded-2xl p-4 sm:p-5 mb-10 shadow-xl space-y-4">
+        <div className="bg-[#13161c] border border-white/[0.08] rounded-xl p-4 sm:p-5 mb-8 space-y-4">
           {/* Category Tabs */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
             {categories.map((cat) => (
               <button
                 key={cat.value}
                 onClick={() => setSelectedCategory(cat.value)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-colors ${
                   selectedCategory === cat.value
-                    ? "bg-amber-500 text-black shadow-lg shadow-amber-500/25 font-bold"
-                    : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white"
+                    ? "bg-[#d99b38] text-[#0d0f12] font-semibold"
+                    : "bg-[#1a1e26] text-[#9ca3af] hover:text-white hover:bg-[#232733]"
                 }`}
               >
                 {cat.label}
@@ -97,27 +93,27 @@ export const ShowroomSection: React.FC<ShowroomSectionProps> = ({
             ))}
           </div>
 
-          {/* Search and Price Slider */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2 border-t border-white/5">
+          {/* Search and Price Range */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-3 border-t border-white/[0.04]">
             {/* Search Input */}
             <div className="relative">
-              <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-[#6b7280] absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Buscar por marca, modelo (ex: Compass, Corolla, BMW)..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-black/40 border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-amber-500 transition"
+                placeholder="Buscar por marca ou modelo (ex: Compass, Corolla)..."
+                className="w-full pl-9 pr-4 py-2 rounded-lg bg-[#0d0f12] border border-white/[0.08] text-white placeholder-[#6b7280] text-xs focus:outline-none focus:border-[#d99b38] transition-colors"
               />
             </div>
 
             {/* Max Price Slider */}
-            <div className="flex items-center gap-4 px-2">
-              <SlidersHorizontal className="w-4 h-4 text-amber-500 shrink-0" />
+            <div className="flex items-center gap-3 px-1">
+              <SlidersHorizontal className="w-4 h-4 text-[#9ca3af] shrink-0" />
               <div className="flex-1">
-                <div className="flex justify-between text-xs text-gray-400 mb-1">
+                <div className="flex justify-between text-xs text-[#9ca3af] mb-1">
                   <span>Preço máximo:</span>
-                  <span className="text-white font-bold">
+                  <span className="text-white font-semibold tabular-nums">
                     {new Intl.NumberFormat("pt-BR", {
                       style: "currency",
                       currency: "BRL",
@@ -129,10 +125,10 @@ export const ShowroomSection: React.FC<ShowroomSectionProps> = ({
                   type="range"
                   min={80000}
                   max={500000}
-                  step={10000}
+                  step={5000}
                   value={maxPrice}
                   onChange={(e) => setMaxPrice(Number(e.target.value))}
-                  className="w-full accent-amber-500 cursor-pointer h-1.5 bg-white/10 rounded-lg"
+                  className="w-full accent-[#d99b38] cursor-pointer h-1.5 bg-[#232733] rounded-lg"
                 />
               </div>
             </div>
@@ -141,21 +137,21 @@ export const ShowroomSection: React.FC<ShowroomSectionProps> = ({
 
         {/* Vehicles Grid */}
         {filteredVehicles.length === 0 ? (
-          <div className="text-center py-16 bg-[#11131b] rounded-2xl border border-white/5">
-            <p className="text-gray-400 text-lg mb-2">Nenhum veículo encontrado com os filtros selecionados.</p>
+          <div className="text-center py-16 bg-[#13161c] rounded-xl border border-white/[0.08] space-y-2">
+            <p className="text-[#9ca3af] text-sm">Nenhum veículo encontrado com os filtros selecionados.</p>
             <button
               onClick={() => {
                 setSelectedCategory("todos");
                 setSearchTerm("");
                 setMaxPrice(500000);
               }}
-              className="text-amber-400 font-semibold text-sm hover:underline"
+              className="text-[#d99b38] font-medium text-xs hover:underline"
             >
-              Limpar filtros de busca
+              Limpar filtros
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {filteredVehicles.map((vehicle) => {
               const formattedPrice = new Intl.NumberFormat("pt-BR", {
                 style: "currency",
@@ -166,114 +162,112 @@ export const ShowroomSection: React.FC<ShowroomSectionProps> = ({
               const formattedKm = new Intl.NumberFormat("pt-BR").format(vehicle.km);
 
               const whatsappUrl = `https://wa.me/${STORE_INFO.whatsappNumber}?text=${encodeURIComponent(
-                `Olá! Gostei do ${vehicle.title} ${vehicle.version} (${vehicle.yearModel}) anunciado por ${formattedPrice} na MB Veículos. Gostaria de mais fotos e informações.`
+                `Olá, tenho interesse no ${vehicle.title} ${vehicle.version} (${vehicle.yearModel}) anunciado por ${formattedPrice} na MB Veículos.`
               )}`;
 
               return (
                 <div
                   key={vehicle.id}
-                  className="group relative rounded-2xl bg-gradient-to-b from-[#151722] to-[#0f1118] border border-white/10 overflow-hidden shadow-xl hover:border-amber-500/40 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300 flex flex-col"
+                  className="rounded-xl bg-[#13161c] border border-white/[0.08] hover:border-white/[0.16] transition-colors flex flex-col overflow-hidden"
                 >
-                  {/* Photo Container */}
-                  <div className="relative w-full h-52 overflow-hidden bg-black/60">
+                  {/* Photo Frame */}
+                  <div className="relative w-full h-48 bg-[#0a0c10] overflow-hidden">
                     <Image
                       src={vehicle.featuredImage}
                       alt={vehicle.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     />
 
                     {/* Badge top-left */}
-                    <div className="absolute top-2.5 left-2.5 flex flex-wrap gap-1.5">
-                      <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-black/75 backdrop-blur-md text-amber-400 border border-amber-500/30">
+                    <div className="absolute top-2.5 left-2.5">
+                      <span className="px-2 py-0.5 rounded bg-[#0d0f12]/90 backdrop-blur-sm text-[11px] font-medium text-[#d99b38] border border-white/[0.08]">
                         {vehicle.badges[0]}
                       </span>
                     </div>
 
-                    {/* Category tag top-right */}
-                    <div className="absolute top-2.5 right-2.5">
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-black/60 text-gray-300 backdrop-blur-sm">
-                        {vehicle.category}
-                      </span>
-                    </div>
-
-                    {/* Quick view button on hover */}
+                    {/* Quick view button */}
                     <button
                       onClick={() => setSelectedVehicle(vehicle)}
-                      className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white text-xs font-bold tracking-wider uppercase backdrop-blur-[2px]"
+                      className="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded bg-[#0d0f12]/90 hover:bg-[#0d0f12] text-white text-xs font-medium border border-white/[0.1] transition-colors flex items-center gap-1.5"
                     >
-                      <Eye className="w-4 h-4 text-amber-400" />
-                      Ver Ficha Completa
+                      <Eye className="w-3.5 h-3.5 text-[#9ca3af]" />
+                      <span>Ficha completa</span>
                     </button>
                   </div>
 
                   {/* Vehicle Information */}
-                  <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+                  <div className="p-4 flex-1 flex flex-col justify-between space-y-4">
                     <div>
-                      <div className="flex items-center justify-between text-xs text-gray-400 mb-1">
+                      <div className="flex items-center justify-between text-xs text-[#9ca3af] mb-1">
                         <span>{vehicle.brand}</span>
-                        <span>Placa final {vehicle.plateEnd}</span>
+                        <span className="tabular-nums">Final de placa {vehicle.plateEnd}</span>
                       </div>
 
-                      <h3 className="text-lg font-black text-white group-hover:text-amber-400 transition-colors line-clamp-1">
+                      <h3 className="text-base font-bold text-white line-clamp-1">
                         {vehicle.title}
                       </h3>
-                      <p className="text-xs text-gray-400 line-clamp-1 mb-3">
+                      <p className="text-xs text-[#9ca3af] line-clamp-1 mt-0.5">
                         {vehicle.version}
                       </p>
 
-                      {/* Specs pills */}
-                      <div className="grid grid-cols-3 gap-1.5 py-2.5 my-2 border-y border-white/5 text-[11px] text-gray-300">
+                      {/* Specs Row */}
+                      <div className="grid grid-cols-3 gap-2 py-2 mt-3 border-y border-white/[0.04] text-xs text-[#9ca3af]">
                         <div className="flex items-center gap-1">
-                          <Calendar className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-                          <span>{vehicle.yearModel.split("/")[0]}</span>
+                          <Calendar className="w-3.5 h-3.5 text-[#6b7280] shrink-0" />
+                          <span className="tabular-nums">{vehicle.yearModel.split("/")[0]}</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <Gauge className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-                          <span>{formattedKm} km</span>
+                          <Gauge className="w-3.5 h-3.5 text-[#6b7280] shrink-0" />
+                          <span className="tabular-nums">{formattedKm} km</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <Fuel className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-                          <span>{vehicle.fuel}</span>
+                          <Fuel className="w-3.5 h-3.5 text-[#6b7280] shrink-0" />
+                          <span className="truncate">{vehicle.fuel}</span>
                         </div>
                       </div>
                     </div>
 
-                    {/* Price and Action Buttons */}
-                    <div className="pt-2">
-                      <div className="mb-3">
-                        <span className="text-[10px] text-gray-400 uppercase tracking-wider block">
+                    {/* Price & Actions */}
+                    <div className="space-y-3 pt-1">
+                      <div>
+                        <span className="text-[11px] text-[#9ca3af] block">
                           Valor à vista
                         </span>
-                        <div className="flex items-baseline gap-2">
-                          <span className="text-xl font-black text-white">
+                        <div className="flex items-baseline justify-between">
+                          <span className="text-lg font-bold text-white tabular-nums">
                             {formattedPrice}
                           </span>
+                          <span className="text-xs text-[#9ca3af] tabular-nums">
+                            ou 48x de R$ {vehicle.monthlyEstimate}
+                          </span>
                         </div>
-                        <span className="text-[11px] text-emerald-400 block font-medium">
-                          ou entrada + R$ {vehicle.monthlyEstimate}/mês*
-                        </span>
                       </div>
 
                       <div className="grid grid-cols-2 gap-2">
-                        <button
-                          onClick={() => setSelectedVehicle(vehicle)}
-                          className="py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-white text-xs font-semibold flex items-center justify-center gap-1.5 border border-white/10 transition"
-                        >
-                          <Eye className="w-3.5 h-3.5 text-amber-400" />
-                          Detalhes
-                        </button>
-
                         <a
                           href={whatsappUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-emerald-950/40 transition"
+                          className="py-2 rounded-lg bg-[#10b981] hover:bg-[#059669] text-white font-medium text-xs flex items-center justify-center gap-1.5 transition-colors"
                         >
-                          <MessageCircle className="w-3.5 h-3.5 fill-white" />
-                          Proposta
+                          <MessageCircle className="w-3.5 h-3.5" />
+                          <span>WhatsApp</span>
                         </a>
+
+                        <button
+                          onClick={() => {
+                            if (onSelectVehicleForFinance) {
+                              onSelectVehicleForFinance(vehicle);
+                              document.getElementById("financiamento")?.scrollIntoView({ behavior: "smooth" });
+                            }
+                          }}
+                          className="py-2 rounded-lg bg-[#1a1e26] hover:bg-[#232733] border border-white/[0.08] text-[#d1d5db] hover:text-white font-medium text-xs flex items-center justify-center gap-1.5 transition-colors"
+                        >
+                          <span>Simular</span>
+                          <ArrowRight className="w-3 h-3 text-[#9ca3af]" />
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -282,20 +276,22 @@ export const ShowroomSection: React.FC<ShowroomSectionProps> = ({
             })}
           </div>
         )}
+      </div>
 
-        {/* Modal for full vehicle details */}
+      {/* Vehicle Detail Modal */}
+      {selectedVehicle && (
         <VehicleDetailModal
           vehicle={selectedVehicle}
           onClose={() => setSelectedVehicle(null)}
-          onSimulateFinance={(vehicle) => {
+          onSimulateFinance={(veh: Vehicle) => {
             if (onSelectVehicleForFinance) {
-              onSelectVehicleForFinance(vehicle);
+              onSelectVehicleForFinance(veh);
+              setSelectedVehicle(null);
+              document.getElementById("financiamento")?.scrollIntoView({ behavior: "smooth" });
             }
-            const el = document.getElementById("financiamento");
-            if (el) el.scrollIntoView({ behavior: "smooth" });
           }}
         />
-      </div>
+      )}
     </section>
   );
 };
