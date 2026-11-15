@@ -34,7 +34,18 @@ export const HeroSection: React.FC = () => {
               ))}
             </div>
             <span>
-              <strong>{STORE_INFO.googleRating}</strong> no Google ({STORE_INFO.reviewsCount} avaliações)
+              <strong>{STORE_INFO.googleRating}</strong> no Google Business
+            </span>
+          </div>
+
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs font-medium">
+            <div className="flex text-blue-400">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-blue-400 text-blue-400" />
+              ))}
+            </div>
+            <span>
+              <strong>5/5</strong> no Facebook
             </span>
           </div>
         </div>
@@ -161,10 +172,10 @@ export const HeroSection: React.FC = () => {
 
           <div className="flex flex-col items-center">
             <span className="text-2xl lg:text-3xl font-black text-white mb-1">
-              {STORE_INFO.carsSold}
+              5/5 ⭐
             </span>
             <span className="text-xs sm:text-sm text-gray-400 font-medium">
-              Carros entregues e clientes satisfeitos
+              Satisfação máxima no Facebook
             </span>
           </div>
 

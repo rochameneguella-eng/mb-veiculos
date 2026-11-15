@@ -266,8 +266,8 @@ export const STORE_INFO = {
   hoursWeekday: "Segunda a Sexta: 08:30 às 18:00",
   hoursSaturday: "Sábado: 08:30 às 13:00",
   yearsActive: 16,
-  carsSold: "8.500+",
-  googleRating: 4.9,
-  reviewsCount: 380,
-  googleMapsUrl: "https://maps.google.com/?q=Av.+Rebouças,+1820+-+Jardim+Alvorada,+Sumaré+-+SP"
+  googleRating: 4.7,
+  facebookRating: "5/5",
+  reviewsCount: 190,
+  googleMapsUrl: "https://maps.google.com/?q=Av.+Rebouças,+1820+-+Jardim+Alvorada,+Sumaré+-+SP",
 };

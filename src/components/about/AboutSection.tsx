@@ -72,10 +72,10 @@ export const AboutSection: React.FC = () => {
                 <span className="text-[11px] text-gray-400">Em Sumaré</span>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
-                <span className="text-xl sm:text-2xl font-black text-white block">
-                  {STORE_INFO.carsSold}
+                <span className="text-xl sm:text-2xl font-black text-blue-400 block">
+                  5/5
                 </span>
-                <span className="text-[11px] text-gray-400">Carros Entregues</span>
+                <span className="text-[11px] text-gray-400">No Facebook</span>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-center">
                 <span className="text-xl sm:text-2xl font-black text-emerald-400 block">
@@ -149,7 +149,7 @@ export const AboutSection: React.FC = () => {
               O Que Dizem Nossos Clientes
             </h3>
             <p className="text-gray-400 text-sm mt-1">
-              Avaliação <strong>{STORE_INFO.googleRating} de 5.0 estrelas</strong> no Google Reviews
+              Avaliação <strong>{STORE_INFO.googleRating} estrelas</strong> no Google Business • <strong>5/5</strong> no Facebook
             </p>
           </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { STORE_INFO } from "@/data/mock-vehicles";
 import {
   Car,
@@ -76,19 +77,17 @@ export const Navbar: React.FC = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo MB Veículos */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:shadow-amber-500/40 transition">
-              <span className="text-black font-black text-xl tracking-tighter">MB</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-black tracking-wider text-white flex items-center gap-1">
-                VEÍCULOS
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 inline-block" />
-              </span>
-              <span className="text-[10px] uppercase tracking-widest text-gray-400 font-semibold -mt-1">
-                Sumaré • SP
-              </span>
+          {/* Logo MB Veículos (Original da Loja Física) */}
+          <a href="#" className="flex items-center group">
+            <div className="bg-white px-3.5 py-1.5 rounded-xl shadow-md border border-white/20 hover:bg-gray-50 transition flex items-center">
+              <Image
+                src="/logo-mb-veiculos.png"
+                alt="MB Veículos - Sumaré"
+                width={170}
+                height={35}
+                className="h-8 sm:h-9 w-auto object-contain"
+                priority
+              />
             </div>
           </a>
 

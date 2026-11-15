@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { STORE_INFO } from "@/data/mock-vehicles";
 import {
   ArrowUp,
@@ -22,18 +23,14 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Col 1: Brand & Slogan */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center shadow-lg shadow-amber-500/20">
-                <span className="text-black font-black text-xl tracking-tighter">MB</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-black tracking-wider text-white">
-                  MB VEÍCULOS
-                </span>
-                <span className="text-[10px] uppercase tracking-widest text-amber-400 font-semibold -mt-1">
-                  Sumaré • SP
-                </span>
-              </div>
+            <div className="inline-block bg-white px-3.5 py-1.5 rounded-xl shadow-md border border-white/20">
+              <Image
+                src="/logo-mb-veiculos.png"
+                alt="MB Veículos - Sumaré"
+                width={160}
+                height={35}
+                className="h-8 w-auto object-contain"
+              />
             </div>
 
             <p className="text-xs text-gray-400 leading-relaxed">
