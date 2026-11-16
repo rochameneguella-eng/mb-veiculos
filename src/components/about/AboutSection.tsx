@@ -87,7 +87,10 @@ export const AboutSection: React.FC = () => {
           {/* Right: Real Storefront Photo + Commitments */}
           <div className="lg:col-span-6">
             <div className="rounded-xl bg-[#13161c] border border-white/[0.08] overflow-hidden space-y-4">
-              <div className="relative w-full h-56 sm:h-64 bg-[#0a0c10]">
+              <div
+                className="relative w-full h-56 sm:h-64 bg-[#0a0c10]"
+                style={{ position: "relative" }}
+              >
                 <Image
                   src="/fachada-loja.jpg"
                   alt="Fachada física da MB Veículos na Av. Rebouças, Sumaré"

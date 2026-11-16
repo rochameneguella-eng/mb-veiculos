@@ -2,28 +2,22 @@
 
 import React from "react";
 import Image from "next/image";
-import { STORE_INFO, MOCK_VEHICLES } from "@/data/mock-vehicles";
+import { STORE_INFO } from "@/data/mock-vehicles";
 import {
-  ShieldCheck,
   Star,
-  Search,
-  ArrowRight,
   Check,
   BadgeDollarSign,
   FileCheck2,
+  MessageCircle,
+  Zap,
 } from "lucide-react";
 
 export const HeroSection: React.FC = () => {
-  const featuredCar = MOCK_VEHICLES[0]; // Jeep Compass
-
-  const formattedPrice = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-    maximumFractionDigits: 0,
-  }).format(featuredCar.price);
-
   return (
-    <section className="relative pt-8 pb-16 border-b border-white/[0.06]">
+    <section className="relative pt-8 pb-16 border-b border-white/[0.06] overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/3 right-1/4 w-[500px] h-[300px] bg-[#d99b38]/10 blur-[130px] rounded-full pointer-events-none -z-10" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Trust Badges Row */}
         <div className="flex flex-wrap items-center gap-2 mb-6">
@@ -39,7 +33,7 @@ export const HeroSection: React.FC = () => {
               ))}
             </div>
             <span>
-              <strong>{STORE_INFO.googleRating}</strong> no Google Business
+              <strong>{STORE_INFO.googleRating}</strong> no Google Business ({STORE_INFO.reviewsCount} avaliações)
             </span>
           </div>
 
@@ -49,30 +43,30 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Hero Grid: Split Headline + Real Product Showcase */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Left Column: Clear, deliberate copy */}
-          <div className="lg:col-span-7 space-y-6">
+        {/* Hero Grid: Headline Copy on Left + Car Showcase on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Column: High-converting proposition */}
+          <div className="lg:col-span-5 space-y-6">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15]">
               Seu próximo carro com procedência garantida em Sumaré
             </h1>
 
-            <p className="text-base sm:text-lg text-[#9ca3af] leading-relaxed max-w-2xl">
-              Veículos seminovos inspecionados com laudo cautelar 100% aprovado, revisão mecânica preventiva, garantia de fábrica ou loja e condições diretas de financiamento.
+            <p className="text-base sm:text-lg text-[#9ca3af] leading-relaxed">
+              Veículos seminovos inspecionados com laudo cautelar 100% aprovado, revisão preventiva, garantia e condições diretas de financiamento ou troca com troco.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
-                href="#estoque"
-                className="px-5 py-2.5 rounded-lg bg-[#d99b38] hover:bg-[#e4a844] text-[#0d0f12] font-semibold text-sm transition-colors flex items-center gap-2"
+                href="#vender"
+                className="px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold text-sm transition-all shadow-lg shadow-emerald-950/40 flex items-center gap-2"
               >
-                <Search className="w-4 h-4" />
-                <span>Ver estoque disponível</span>
+                <Zap className="w-4 h-4 fill-white" />
+                <span>Vender meu usado (PIX)</span>
               </a>
 
               <a
                 href="#financiamento"
-                className="px-5 py-2.5 rounded-lg bg-[#14171d] hover:bg-[#1b1e26] border border-white/[0.08] text-[#d1d5db] hover:text-white font-medium text-sm transition-colors flex items-center gap-2"
+                className="px-5 py-3 rounded-xl bg-[#14171d] hover:bg-[#1b1e26] border border-white/[0.08] text-[#d1d5db] hover:text-white font-medium text-sm transition-colors flex items-center gap-2"
               >
                 <BadgeDollarSign className="w-4 h-4 text-[#d99b38]" />
                 <span>Simular financiamento</span>
@@ -83,7 +77,7 @@ export const HeroSection: React.FC = () => {
             <div className="pt-4 border-t border-white/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-[#9ca3af]">
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-[#10b981] shrink-0" />
-                <span>Laudo cautelar aprovado</span>
+                <span>Laudo cautelar 100%</span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-[#10b981] shrink-0" />
@@ -96,84 +90,96 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Grounded Product Moment (Featured Vehicle with Cautelar Certificate) */}
-          <div className="lg:col-span-5">
-            <div className="rounded-xl bg-[#13161c] border border-white/[0.08] overflow-hidden">
-              {/* Image Frame */}
-              <div className="relative w-full h-56 sm:h-64 bg-[#0a0c10]">
+          {/* Right Column: Featured Vehicle Showcase using carro.jpg */}
+          <div className="lg:col-span-7 flex flex-col space-y-3">
+            <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/80 bg-[#07080c] group">
+              <div
+                className="relative w-full aspect-[1265/672] min-h-[260px] overflow-hidden"
+                style={{ position: "relative" }}
+              >
                 <Image
-                  src={featuredCar.featuredImage}
-                  alt={featuredCar.title}
+                  src="/carro.jpg"
+                  alt="Veículo em Destaque na MB Veículos"
                   fill
-                  className="object-cover"
                   priority
-                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 1024px) 100vw, 55vw"
                 />
-                <div className="absolute top-3 left-3">
-                  <span className="px-2.5 py-1 rounded bg-[#0d0f12]/90 backdrop-blur-sm border border-white/[0.1] text-xs font-medium text-[#d99b38]">
-                    Destaque do showroom
-                  </span>
-                </div>
-                <div className="absolute top-3 right-3">
-                  <span className="px-2.5 py-1 rounded bg-[#0d0f12]/90 backdrop-blur-sm border border-white/[0.1] text-xs font-medium text-[#d1d5db]">
-                    {featuredCar.yearModel}
-                  </span>
-                </div>
-              </div>
 
-              {/* Details & Inspection Highlights */}
-              <div className="p-5 space-y-4">
-                <div className="flex items-start justify-between gap-3">
+                {/* Subtle gradient vignettes for luxury feel */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08090d]/95 via-[#08090d]/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#08090d]/40 via-transparent to-transparent pointer-events-none" />
+
+                {/* Top badges */}
+                <div className="absolute top-3.5 left-3.5 flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#08090d]/80 backdrop-blur-md border border-[#d99b38]/40 text-xs font-bold text-white uppercase tracking-wider">
+                    <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
+                    MB Veículos • Sumaré
+                  </span>
+                </div>
+
+                <div className="absolute top-3.5 right-3.5">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#08090d]/80 backdrop-blur-md border border-white/10 text-[11px] font-bold text-[#d99b38] uppercase tracking-wider">
+                    ★ Super Destaque
+                  </span>
+                </div>
+
+                {/* Bottom title and approved badge */}
+                <div className="absolute bottom-3.5 left-4 right-4 flex items-end justify-between gap-4 pointer-events-none">
                   <div>
-                    <h2 className="text-lg font-bold text-white leading-snug">
-                      {featuredCar.title}
-                    </h2>
-                    <p className="text-xs text-[#9ca3af] mt-0.5">
-                      {featuredCar.version}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-lg font-bold text-white tabular-nums block">
-                      {formattedPrice}
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#d99b38] block mb-0.5">
+                      Seminovo Selecionado
                     </span>
-                    <span className="text-[11px] text-[#9ca3af] tabular-nums">
-                      {new Intl.NumberFormat("pt-BR").format(featuredCar.km)} km
+                    <h3 className="text-lg sm:text-2xl font-bold text-white drop-shadow-md">
+                      Qualidade & Procedência Garantida
+                    </h3>
+                  </div>
+                  <div className="text-right shrink-0">
+                    <span className="px-3 py-1 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-xs font-bold backdrop-blur-md">
+                      Laudo 100% Aprovado
                     </span>
                   </div>
                 </div>
-
-                {/* Technical Cautelar Status Box */}
-                <div className="p-3 rounded-lg bg-[#0d0f12] border border-white/[0.06] space-y-1.5 text-xs text-[#9ca3af]">
-                  <div className="flex items-center justify-between text-[#d1d5db] font-medium pb-1 border-b border-white/[0.04]">
-                    <span className="flex items-center gap-1.5 text-xs">
-                      <FileCheck2 className="w-3.5 h-3.5 text-[#10b981]" />
-                      Laudo pericial cautelar
-                    </span>
-                    <span className="text-[11px] text-[#10b981] font-semibold">100% Aprovado</span>
-                  </div>
-                  <div className="flex items-center justify-between text-[11px]">
-                    <span>Estrutura e longarinas</span>
-                    <span className="text-[#9ca3af]">Originais de fábrica</span>
-                  </div>
-                  <div className="flex items-center justify-between text-[11px]">
-                    <span>Histórico de sinistro / leilão</span>
-                    <span className="text-[#9ca3af]">Nenhum registro</span>
-                  </div>
-                </div>
-
-                <a
-                  href={`#estoque`}
-                  className="w-full py-2.5 rounded-lg bg-[#1a1e26] hover:bg-[#232733] border border-white/[0.08] text-[#d1d5db] hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
-                >
-                  <span>Ver detalhes deste veículo</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </a>
               </div>
+            </div>
+
+            {/* Sub-card with Inspection & Direct WhatsApp Negotation */}
+            <div className="p-4 rounded-xl bg-[#12151e] border border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                  <FileCheck2 className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-bold text-white">
+                      Laudo Cautelar Pericial
+                    </span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                      100% Aprovado
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-[#9ca3af] mt-0.5">
+                    Estrutura original, sem sinistros e sem leilão.
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href={`https://wa.me/${STORE_INFO.whatsappNumber}?text=${encodeURIComponent(
+                  "Olá! Vi o veículo em destaque na página da MB Veículos e gostaria de mais informações e proposta."
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-md shadow-emerald-950/40 transition shrink-0"
+              >
+                <MessageCircle className="w-4 h-4 fill-white" />
+                <span>Consultar no WhatsApp</span>
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Quiet Numerical Strip (Tabular numbers, no exaggerated claims) */}
+        {/* Quiet Numerical Strip */}
         <div className="mt-12 pt-8 border-t border-white/[0.06] grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div className="space-y-1">
             <span className="text-2xl font-bold text-white tabular-nums block">

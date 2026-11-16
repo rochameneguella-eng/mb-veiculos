@@ -27,11 +27,10 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { label: "Estoque", href: "#estoque" },
     { label: "Venda seu carro", href: "#vender" },
     { label: "Financiamento", href: "#financiamento" },
     { label: "Vantagens", href: "#vantagens" },
-    { label: "Sobre", href: "#sobre" },
+    { label: "Sobre a MB", href: "#sobre" },
     { label: "Contato e localização", href: "#contato" },
   ];
 
@@ -85,6 +84,7 @@ export const Navbar: React.FC = () => {
                 width={150}
                 height={32}
                 className="h-7 sm:h-8 w-auto object-contain"
+                style={{ width: "auto", height: "auto" }}
                 priority
               />
             </div>
@@ -118,11 +118,11 @@ export const Navbar: React.FC = () => {
             </a>
 
             <a
-              href="#estoque"
+              href="#vender"
               className="inline-flex items-center gap-1.5 bg-[#d99b38] hover:bg-[#e4a844] text-[#0d0f12] font-semibold text-xs px-3.5 py-2 rounded-lg transition-colors"
             >
               <Car className="w-3.5 h-3.5" />
-              <span>Ver estoque</span>
+              <span>Avaliar meu carro</span>
             </a>
           </div>
 

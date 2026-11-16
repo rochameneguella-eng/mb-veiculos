@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/hero/HeroSection";
-import { ShowroomSection } from "@/components/showroom/ShowroomSection";
 import { SellCarSection } from "@/components/sell/SellCarSection";
 import { FinanceSimulatorSection } from "@/components/finance/FinanceSimulatorSection";
 import { TrustDifferentialsSection } from "@/components/trust/TrustDifferentialsSection";
@@ -11,37 +10,23 @@ import { AboutSection } from "@/components/about/AboutSection";
 import { LocationSection } from "@/components/location/LocationSection";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
-import { Vehicle } from "@/types/vehicle";
 
 export default function Home() {
-  const [selectedVehicleForFinance, setSelectedVehicleForFinance] =
-    useState<Vehicle | null>(null);
-
-  const handleSelectVehicle = (vehicle: Vehicle) => {
-    setSelectedVehicleForFinance(vehicle);
-  };
-
   return (
-    <div className="min-h-screen bg-[#0d0f12] text-gray-100 flex flex-col">
+    <div suppressHydrationWarning className="min-h-screen bg-[#090a0f] text-gray-100 flex flex-col">
       {/* Sticky Header */}
       <Navbar />
 
       {/* Main Page Flow */}
       <main className="flex-1">
-        {/* Hero Section with Remotion Kinetic Animation */}
+        {/* Hero Section with Remotion Kinetic Animation of carro.jpeg */}
         <HeroSection />
-
-        {/* Curated Showroom & Interactive Catalog */}
-        <ShowroomSection onSelectVehicleForFinance={handleSelectVehicle} />
 
         {/* Sell / Trade-in Instant Valuation */}
         <SellCarSection />
 
         {/* Interactive Auto Financing Simulator */}
-        <FinanceSimulatorSection
-          key={selectedVehicleForFinance?.id || "default"}
-          initialVehiclePrice={selectedVehicleForFinance?.price || 120000}
-        />
+        <FinanceSimulatorSection initialVehiclePrice={120000} />
 
         {/* Trust Pillars & Quality Assurance */}
         <TrustDifferentialsSection />

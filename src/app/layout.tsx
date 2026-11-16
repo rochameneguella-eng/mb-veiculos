@@ -30,8 +30,54 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className="scroll-smooth dark">
-      <body className="min-h-screen bg-[#0d0f12] text-[#f3f4f6] antialiased selection:bg-[#d99b38] selection:text-[#0d0f12]">
+    <html lang="pt-BR" className="scroll-smooth dark" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var clean = function(el) {
+                    if (el && el.removeAttribute) {
+                      if (el.hasAttribute('bis_skin_checked')) el.removeAttribute('bis_skin_checked');
+                      if (el.hasAttribute('bis_register')) el.removeAttribute('bis_register');
+                    }
+                  };
+                  var observer = new MutationObserver(function(mutations) {
+                    for (var i = 0; i < mutations.length; i++) {
+                      var m = mutations[i];
+                      if (m.type === 'attributes') {
+                        clean(m.target);
+                      } else if (m.type === 'childList') {
+                        for (var j = 0; j < m.addedNodes.length; j++) {
+                          var node = m.addedNodes[j];
+                          if (node.nodeType === 1) {
+                            clean(node);
+                            if (node.querySelectorAll) {
+                              var items = node.querySelectorAll('[bis_skin_checked],[bis_register]');
+                              for (var k = 0; k < items.length; k++) clean(items[k]);
+                            }
+                          }
+                        }
+                      }
+                    }
+                  });
+                  observer.observe(document.documentElement, {
+                    attributes: true,
+                    attributeFilter: ['bis_skin_checked', 'bis_register'],
+                    childList: true,
+                    subtree: true
+                  });
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body
+        className="min-h-screen bg-[#090a0f] text-gray-100 antialiased selection:bg-amber-500 selection:text-black"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
