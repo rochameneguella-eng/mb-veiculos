@@ -14,8 +14,8 @@ import {
 
 export const LocationSection: React.FC = () => {
   return (
-    <section id="contato" className="py-16 border-b border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contato" className="py-16 border-b border-white/[0.06] scroll-mt-20">
+      <div id="localizacao" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#161a22] border border-white/[0.08] text-xs text-[#9ca3af]">
             <MapPin className="w-3.5 h-3.5 text-[#d99b38]" />

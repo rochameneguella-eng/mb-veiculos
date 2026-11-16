@@ -7,6 +7,7 @@ import { SellCarSection } from "@/components/sell/SellCarSection";
 import { FinanceSimulatorSection } from "@/components/finance/FinanceSimulatorSection";
 import { TrustDifferentialsSection } from "@/components/trust/TrustDifferentialsSection";
 import { AboutSection } from "@/components/about/AboutSection";
+import { FaqSection } from "@/components/faq/FaqSection";
 import { LocationSection } from "@/components/location/LocationSection";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
@@ -19,7 +20,7 @@ export default function Home() {
 
       {/* Main Page Flow */}
       <main className="flex-1">
-        {/* Hero Section with Remotion Kinetic Animation of carro.jpeg */}
+        {/* Hero Section with carro.jpg Showcase */}
         <HeroSection />
 
         {/* Sell / Trade-in Instant Valuation */}
@@ -33,6 +34,9 @@ export default function Home() {
 
         {/* About MB Veículos & Customer Reviews */}
         <AboutSection />
+
+        {/* FAQ Accordion for Conversion & AEO / Answer Engines */}
+        <FaqSection />
 
         {/* Store Physical Location, Schedule & Contacts */}
         <LocationSection />

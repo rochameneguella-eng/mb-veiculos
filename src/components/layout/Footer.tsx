@@ -52,13 +52,8 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <a href="#estoque" className="hover:text-white transition-colors">
-                  Estoque de seminovos
-                </a>
-              </li>
-              <li>
                 <a href="#vender" className="hover:text-white transition-colors">
-                  Venda ou troque seu veículo
+                  Venda seu veículo (PIX na hora)
                 </a>
               </li>
               <li>
@@ -74,6 +69,11 @@ export const Footer: React.FC = () => {
               <li>
                 <a href="#sobre" className="hover:text-white transition-colors">
                   Sobre a MB Veículos
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="hover:text-white transition-colors">
+                  Perguntas frequentes (FAQ)
                 </a>
               </li>
               <li>

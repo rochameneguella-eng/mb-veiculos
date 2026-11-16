@@ -31,7 +31,8 @@ export const Navbar: React.FC = () => {
     { label: "Financiamento", href: "#financiamento" },
     { label: "Vantagens", href: "#vantagens" },
     { label: "Sobre a MB", href: "#sobre" },
-    { label: "Contato e localização", href: "#contato" },
+    { label: "Dúvidas", href: "#faq" },
+    { label: "Localização", href: "#contato" },
   ];
 
   return (
