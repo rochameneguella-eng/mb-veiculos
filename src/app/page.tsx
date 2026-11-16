@@ -14,7 +14,7 @@ import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 
 export default function Home() {
   return (
-    <div suppressHydrationWarning className="min-h-screen bg-[#090a0f] text-gray-100 flex flex-col">
+    <div suppressHydrationWarning className="min-h-screen bg-[#0f1218] text-gray-100 flex flex-col">
       {/* Sticky Header */}
       <Navbar />
 

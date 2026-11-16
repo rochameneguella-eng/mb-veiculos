@@ -15,7 +15,7 @@ export const WhatsAppFloat: React.FC = () => {
     <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end">
       {/* Speech bubble */}
       {showTooltip && (
-        <div className="mb-2 bg-[#13161c] border border-white/[0.08] text-white text-xs px-3 py-2 rounded-lg shadow-xl flex items-center gap-3">
+        <div className="mb-2 bg-[#141721] border border-white/[0.08] text-white text-xs px-3 py-2 rounded-lg shadow-xl flex items-center gap-3">
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
             <div>

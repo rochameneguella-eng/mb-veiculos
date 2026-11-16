@@ -60,7 +60,7 @@ export const TrustDifferentialsSection: React.FC = () => {
     <section id="vantagens" className="py-16 border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#161a22] border border-white/[0.08] text-xs text-[#9ca3af]">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#181c27] border border-white/[0.08] text-xs text-[#9ca3af]">
             <ShieldCheck className="w-3.5 h-3.5 text-[#d99b38]" />
             <span>Padrão de qualidade</span>
           </div>
@@ -78,14 +78,14 @@ export const TrustDifferentialsSection: React.FC = () => {
             return (
               <div
                 key={index}
-                className="p-5 rounded-xl bg-[#13161c] border border-white/[0.08] hover:border-white/[0.16] transition-colors flex flex-col justify-between space-y-4"
+                className="p-5 rounded-xl bg-[#141721] border border-white/[0.08] hover:border-white/[0.16] transition-colors flex flex-col justify-between space-y-4"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <div className="w-10 h-10 rounded-lg bg-[#1a1e26] border border-white/[0.06] flex items-center justify-center text-[#d99b38]">
+                    <div className="w-10 h-10 rounded-lg bg-[#1c2130] border border-white/[0.06] flex items-center justify-center text-[#d99b38]">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[11px] font-medium text-[#9ca3af] bg-[#0d0f12] px-2.5 py-1 rounded border border-white/[0.06]">
+                    <span className="text-[11px] font-medium text-[#9ca3af] bg-[#0f1218] px-2.5 py-1 rounded border border-white/[0.06]">
                       {diff.highlight}
                     </span>
                   </div>

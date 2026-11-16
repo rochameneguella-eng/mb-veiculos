@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#0b0c10] text-[#9ca3af] pt-14 pb-10 border-t border-white/[0.06] relative">
+    <footer className="bg-[#0c0e14] text-[#9ca3af] pt-14 pb-10 border-t border-white/[0.06] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           {/* Col 1: Brand & Slogan */}
@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
             </p>
 
             <div className="flex items-center gap-2 pt-1">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#13161c] text-[#10b981] text-xs font-medium border border-white/[0.06]">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#141721] text-[#10b981] text-xs font-medium border border-white/[0.06]">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 Loja física verificada
               </span>
@@ -127,7 +127,7 @@ export const Footer: React.FC = () => {
                 href={`https://wa.me/${STORE_INFO.whatsappNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#13161c] hover:bg-[#1a1e26] border border-white/[0.08] text-xs text-[#10b981] font-medium transition-colors"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#141721] hover:bg-[#1c2130] border border-white/[0.08] text-xs text-[#10b981] font-medium transition-colors"
               >
                 <MessageCircle className="w-3.5 h-3.5" />
                 <span>WhatsApp de plantão</span>

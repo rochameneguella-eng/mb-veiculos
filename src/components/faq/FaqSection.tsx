@@ -61,14 +61,14 @@ export const FaqSection: React.FC = () => {
   )}`;
 
   return (
-    <section id="faq" className="py-16 sm:py-24 border-b border-white/[0.06] bg-[#07080c] relative">
+    <section id="faq" className="py-16 sm:py-24 border-b border-white/[0.06] bg-[#0f1218] relative">
       {/* Background soft glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#d99b38]/5 blur-[140px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#161a22] border border-white/[0.08] text-xs text-[#d99b38] font-medium mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#181c27] border border-white/[0.08] text-xs text-[#d99b38] font-medium mb-3">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Tire Suas Dúvidas</span>
           </div>
@@ -84,17 +84,13 @@ export const FaqSection: React.FC = () => {
         <div className="space-y-3.5">
           {FAQ_ITEMS.map((item) => {
             const isOpen = openId === item.id;
-            const whatsappHelpUrl = `https://wa.me/${STORE_INFO.whatsappNumber}?text=${encodeURIComponent(
-    "Olá! Estive no site da MB Veículos e gostaria de tirar uma dúvida sobre compra, venda ou financiamento."
-  )}`;
-
-  return (
+            return (
               <div
                 key={item.id}
                 className={`rounded-2xl transition-all duration-200 border ${
                   isOpen
-                    ? "bg-[#10131b] border-[#d99b38]/40 shadow-xl shadow-black/40"
-                    : "bg-[#0c0e14] border-white/[0.06] hover:border-white/[0.12] hover:bg-[#0f1118]"
+                    ? "bg-[#181c28] border-[#d99b38]/40 shadow-xl shadow-black/40"
+                    : "bg-[#141721] border-white/[0.06] hover:border-white/[0.12] hover:bg-[#181c28]"
                 }`}
               >
                 <button
@@ -134,7 +130,7 @@ export const FaqSection: React.FC = () => {
         </div>
 
         {/* Bottom Help Card */}
-        <div className="mt-10 sm:mt-12 p-6 rounded-2xl bg-gradient-to-r from-[#12151e] via-[#151924] to-[#12151e] border border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="mt-10 sm:mt-12 p-6 rounded-2xl bg-gradient-to-r from-[#141721] via-[#1a1f2e] to-[#141721] border border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="flex items-center gap-3.5">
             <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
               <ShieldCheck className="w-6 h-6" />

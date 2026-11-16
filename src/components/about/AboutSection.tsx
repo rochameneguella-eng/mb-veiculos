@@ -44,7 +44,7 @@ export const AboutSection: React.FC = () => {
         {/* Story Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
           <div className="lg:col-span-6 space-y-5">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#161a22] border border-white/[0.08] text-xs text-[#9ca3af]">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#181c27] border border-white/[0.08] text-xs text-[#9ca3af]">
               <Building className="w-3.5 h-3.5 text-[#d99b38]" />
               <span>Nossa trajetória</span>
             </div>
@@ -63,19 +63,19 @@ export const AboutSection: React.FC = () => {
 
             {/* Badges row */}
             <div className="grid grid-cols-3 gap-3 pt-2">
-              <div className="p-3.5 rounded-lg bg-[#13161c] border border-white/[0.08] text-center">
+              <div className="p-3.5 rounded-lg bg-[#141721] border border-white/[0.08] text-center">
                 <span className="text-xl font-bold text-[#d99b38] block tabular-nums">
                   +{STORE_INFO.yearsActive} anos
                 </span>
                 <span className="text-[11px] text-[#9ca3af]">Em Sumaré</span>
               </div>
-              <div className="p-3.5 rounded-lg bg-[#13161c] border border-white/[0.08] text-center">
+              <div className="p-3.5 rounded-lg bg-[#141721] border border-white/[0.08] text-center">
                 <span className="text-xl font-bold text-[#60a5fa] block tabular-nums">
                   5/5
                 </span>
                 <span className="text-[11px] text-[#9ca3af]">No Facebook</span>
               </div>
-              <div className="p-3.5 rounded-lg bg-[#13161c] border border-white/[0.08] text-center">
+              <div className="p-3.5 rounded-lg bg-[#141721] border border-white/[0.08] text-center">
                 <span className="text-xl font-bold text-[#10b981] block tabular-nums">
                   100%
                 </span>
@@ -86,7 +86,7 @@ export const AboutSection: React.FC = () => {
 
           {/* Right: Real Storefront Photo + Commitments */}
           <div className="lg:col-span-6">
-            <div className="rounded-xl bg-[#13161c] border border-white/[0.08] overflow-hidden space-y-4">
+            <div className="rounded-xl bg-[#141721] border border-white/[0.08] overflow-hidden space-y-4">
               <div
                 className="relative w-full h-56 sm:h-64 bg-[#0a0c10]"
                 style={{ position: "relative" }}
@@ -141,7 +141,7 @@ export const AboutSection: React.FC = () => {
             {testimonials.map((item, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded-xl bg-[#13161c] border border-white/[0.08] flex flex-col justify-between space-y-4"
+                className="p-5 rounded-xl bg-[#141721] border border-white/[0.08] flex flex-col justify-between space-y-4"
               >
                 <div>
                   <Quote className="w-5 h-5 text-[#6b7280] mb-2" />

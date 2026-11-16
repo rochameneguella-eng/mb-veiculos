@@ -78,7 +78,7 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-2 sm:space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#161a22] border border-white/[0.08] text-xs text-[#d99b38] font-semibold">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#181c27] border border-white/[0.08] text-xs text-[#d99b38] font-semibold">
             <Calculator className="w-3.5 h-3.5" />
             <span>Simulador de Financiamento MB</span>
           </div>
@@ -93,7 +93,7 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
         {/* Main Simulator Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch max-w-5xl mx-auto">
           {/* Controls Column */}
-          <div className="lg:col-span-7 p-5 sm:p-8 rounded-2xl bg-[#12141c] border border-white/[0.08] shadow-xl flex flex-col justify-between space-y-6 sm:space-y-7">
+          <div className="lg:col-span-7 p-5 sm:p-8 rounded-2xl bg-[#141721] border border-white/[0.08] shadow-xl flex flex-col justify-between space-y-6 sm:space-y-7">
             <div className="space-y-6 sm:space-y-7">
               {/* Slider 1: Valor do Veículo */}
               <div>
@@ -201,7 +201,7 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
           </div>
 
           {/* Result Calculation Column */}
-          <div className="lg:col-span-5 p-5 sm:p-8 rounded-2xl bg-gradient-to-b from-[#161a26] to-[#0e1017] border border-[#d99b38]/30 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+          <div className="lg:col-span-5 p-5 sm:p-8 rounded-2xl bg-gradient-to-b from-[#1a1f2e] to-[#131622] border border-[#d99b38]/30 shadow-2xl flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 w-36 h-36 bg-[#d99b38]/10 rounded-full blur-2xl pointer-events-none" />
 
             <div>
@@ -229,7 +229,7 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
               </div>
 
               {/* Big Estimate Box */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-[#090b10] border border-white/[0.08] text-center mb-5 sm:mb-6 shadow-inner">
+              <div className="p-4 sm:p-5 rounded-2xl bg-[#0f121a] border border-white/[0.08] text-center mb-5 sm:mb-6 shadow-inner">
                 <span className="text-[11px] font-semibold text-[#9ca3af] uppercase tracking-wider block mb-1">
                   Parcela Estimada ({months}x)
                 </span>

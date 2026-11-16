@@ -21,12 +21,12 @@ export const HeroSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Trust Badges Row */}
         <div className="flex flex-wrap items-center gap-2 mb-6 sm:mb-8">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#161a22] border border-white/[0.08] text-xs text-[#d1d5db]">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#181c27] border border-white/[0.08] text-xs text-[#d1d5db]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#d99b38]" />
             <span>Referência em seminovos em Sumaré e região</span>
           </div>
 
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#161a22] border border-white/[0.08] text-xs text-[#d1d5db]">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#181c27] border border-white/[0.08] text-xs text-[#d1d5db]">
             <div className="flex text-[#d99b38]">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-3 h-3 fill-[#d99b38] text-[#d99b38]" />
@@ -37,7 +37,7 @@ export const HeroSection: React.FC = () => {
             </span>
           </div>
 
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#161a22] border border-white/[0.08] text-xs text-[#d1d5db]">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#181c27] border border-white/[0.08] text-xs text-[#d1d5db]">
             <span className="font-semibold text-[#60a5fa]">5/5</span>
             <span>no Facebook</span>
           </div>
@@ -67,7 +67,7 @@ export const HeroSection: React.FC = () => {
 
               <a
                 href="#financiamento"
-                className="w-full sm:w-auto px-5 py-3 rounded-xl bg-[#14171d] hover:bg-[#1b1e26] border border-white/[0.08] text-[#d1d5db] hover:text-white font-medium text-sm transition-colors flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-5 py-3 rounded-xl bg-[#181c27] hover:bg-[#1f2433] border border-white/[0.08] text-[#d1d5db] hover:text-white font-medium text-sm transition-colors flex items-center justify-center gap-2"
               >
                 <BadgeDollarSign className="w-4 h-4 text-[#d99b38]" />
                 <span>Simular financiamento</span>
@@ -93,7 +93,7 @@ export const HeroSection: React.FC = () => {
 
           {/* Right Column: Featured Vehicle Showcase using carro.jpg */}
           <div className="lg:col-span-7 flex flex-col space-y-3">
-            <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/80 bg-[#07080c] group">
+            <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/80 bg-[#141721] group">
               <div
                 className="relative w-full aspect-[16/10] sm:aspect-[1265/672] min-h-[240px] sm:min-h-[280px] overflow-hidden"
                 style={{ position: "relative" }}
@@ -108,19 +108,19 @@ export const HeroSection: React.FC = () => {
                 />
 
                 {/* Subtle gradient vignettes for luxury feel */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#08090d]/95 via-[#08090d]/30 to-transparent pointer-events-none" />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#08090d]/40 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f1218]/95 via-[#0f1218]/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0f1218]/40 via-transparent to-transparent pointer-events-none" />
 
                 {/* Top badges (Mobile-adaptive) */}
                 <div className="absolute top-3 left-3 sm:top-3.5 sm:left-3.5 flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[#08090d]/85 backdrop-blur-md border border-[#d99b38]/40 text-[10px] sm:text-xs font-bold text-white uppercase tracking-wider">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[#0f1218]/85 backdrop-blur-md border border-[#d99b38]/40 text-[10px] sm:text-xs font-bold text-white uppercase tracking-wider">
                     <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-[#10b981] animate-pulse" />
                     MB Veículos • Sumaré
                   </span>
                 </div>
 
                 <div className="absolute top-3 right-3 sm:top-3.5 sm:right-3.5">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[#08090d]/85 backdrop-blur-md border border-white/10 text-[10px] sm:text-[11px] font-bold text-[#d99b38] uppercase tracking-wider">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[#0f1218]/85 backdrop-blur-md border border-white/10 text-[10px] sm:text-[11px] font-bold text-[#d99b38] uppercase tracking-wider">
                     ★ Super Destaque
                   </span>
                 </div>
@@ -145,7 +145,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Sub-card with Inspection & Direct WhatsApp Negotation */}
-            <div className="p-3.5 sm:p-4 rounded-xl bg-[#12151e] border border-white/[0.08] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 shadow-xl">
+            <div className="p-3.5 sm:p-4 rounded-xl bg-[#141721] border border-white/[0.08] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 shadow-xl">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
                   <FileCheck2 className="w-5 h-5" />

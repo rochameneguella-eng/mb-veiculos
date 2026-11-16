@@ -128,7 +128,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="min-h-screen bg-[#090a0f] text-gray-100 antialiased selection:bg-amber-500 selection:text-black"
+        className="min-h-screen bg-[#0f1218] text-gray-100 antialiased selection:bg-amber-500 selection:text-black"
         suppressHydrationWarning
       >
         {children}

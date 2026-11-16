@@ -17,7 +17,7 @@ export const LocationSection: React.FC = () => {
     <section id="contato" className="py-16 border-b border-white/[0.06] scroll-mt-20">
       <div id="localizacao" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#161a22] border border-white/[0.08] text-xs text-[#9ca3af]">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#181c27] border border-white/[0.08] text-xs text-[#9ca3af]">
             <MapPin className="w-3.5 h-3.5 text-[#d99b38]" />
             <span>Loja física em Sumaré - SP</span>
           </div>
@@ -33,9 +33,9 @@ export const LocationSection: React.FC = () => {
           {/* Left: Contact Info Cards */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
             {/* Address Card */}
-            <div className="p-5 rounded-xl bg-[#13161c] border border-white/[0.08]">
+            <div className="p-5 rounded-xl bg-[#141721] border border-white/[0.08]">
               <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-lg bg-[#1a1e26] border border-white/[0.06] flex items-center justify-center text-[#d99b38] shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-[#1c2130] border border-white/[0.06] flex items-center justify-center text-[#d99b38] shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -64,9 +64,9 @@ export const LocationSection: React.FC = () => {
             </div>
 
             {/* Business Hours */}
-            <div className="p-5 rounded-xl bg-[#13161c] border border-white/[0.08]">
+            <div className="p-5 rounded-xl bg-[#141721] border border-white/[0.08]">
               <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-lg bg-[#1a1e26] border border-white/[0.06] flex items-center justify-center text-[#9ca3af] shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-[#1c2130] border border-white/[0.06] flex items-center justify-center text-[#9ca3af] shrink-0">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div className="text-xs space-y-1">
@@ -80,7 +80,7 @@ export const LocationSection: React.FC = () => {
             </div>
 
             {/* Direct Contacts */}
-            <div className="p-5 rounded-xl bg-[#13161c] border border-white/[0.08] space-y-3">
+            <div className="p-5 rounded-xl bg-[#141721] border border-white/[0.08] space-y-3">
               <div className="flex items-center justify-between text-xs pb-2 border-b border-white/[0.04]">
                 <div className="flex items-center gap-2 text-[#9ca3af]">
                   <Phone className="w-4 h-4 text-[#9ca3af]" />

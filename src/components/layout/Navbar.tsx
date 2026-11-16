@@ -38,7 +38,7 @@ export const Navbar: React.FC = () => {
   return (
     <>
       {/* Top Banner (Address, hours and primary contact) */}
-      <div className="bg-[#0b0c10] text-[#9ca3af] text-xs border-b border-white/[0.06] py-2 px-4 hidden md:block">
+      <div className="bg-[#0e1117] text-[#9ca3af] text-xs border-b border-white/[0.06] py-2 px-4 hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5 text-[#d1d5db]">
@@ -71,7 +71,7 @@ export const Navbar: React.FC = () => {
       <header
         className={`sticky top-0 z-50 transition-[background-color,border-color,padding] duration-150 ${
           isScrolled
-            ? "bg-[#0d0f12]/95 backdrop-blur-md border-b border-white/[0.08] py-3"
+            ? "bg-[#0f1218]/95 backdrop-blur-md border-b border-white/[0.08] py-3"
             : "bg-transparent py-4 border-b border-white/[0.05]"
         }`}
       >
@@ -139,7 +139,7 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#0d0f12] border-b border-white/[0.08] px-5 py-5 space-y-4">
+          <div className="lg:hidden bg-[#141721] border-b border-white/[0.08] px-5 py-5 space-y-4">
             <nav className="flex flex-col space-y-1">
               {navLinks.map((link) => (
                 <a
@@ -166,7 +166,7 @@ export const Navbar: React.FC = () => {
               </a>
               <a
                 href={`tel:${STORE_INFO.phonePrimary.replace(/\D/g, "")}`}
-                className="w-full py-2.5 bg-[#13161c] border border-white/[0.08] text-[#d1d5db] text-center font-medium text-xs rounded-lg flex items-center justify-center gap-2 transition-colors"
+                className="w-full py-2.5 bg-[#1a1e2b] border border-white/[0.08] text-[#d1d5db] text-center font-medium text-xs rounded-lg flex items-center justify-center gap-2 transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 text-[#9ca3af]" />
                 Ligar ({STORE_INFO.phonePrimary})
