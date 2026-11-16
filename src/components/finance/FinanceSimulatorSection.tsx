@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { STORE_INFO } from "@/data/mock-vehicles";
+import { THEME } from "@/theme";
 import {
   Calculator,
   ShieldCheck,
@@ -115,7 +116,7 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
                     onChange={(e) => setVehiclePrice(Number(e.target.value))}
                     className="w-full h-2 rounded-lg"
                     style={{
-                      background: `linear-gradient(to right, #d99b38 0%, #d99b38 ${pricePercent}%, rgba(255,255,255,0.08) ${pricePercent}%, rgba(255,255,255,0.08) 100%)`,
+                      background: `linear-gradient(to right, ${THEME.colors.gold.DEFAULT} 0%, ${THEME.colors.gold.DEFAULT} ${pricePercent}%, rgba(255,255,255,0.08) ${pricePercent}%, rgba(255,255,255,0.08) 100%)`,
                     }}
                   />
                 </div>
@@ -145,7 +146,7 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
                     onChange={(e) => setDownPaymentPercent(Number(e.target.value))}
                     className="w-full h-2 rounded-lg"
                     style={{
-                      background: `linear-gradient(to right, #d99b38 0%, #d99b38 ${downPaymentSliderPercent}%, rgba(255,255,255,0.08) ${downPaymentSliderPercent}%, rgba(255,255,255,0.08) 100%)`,
+                      background: `linear-gradient(to right, ${THEME.colors.gold.DEFAULT} 0%, ${THEME.colors.gold.DEFAULT} ${downPaymentSliderPercent}%, rgba(255,255,255,0.08) ${downPaymentSliderPercent}%, rgba(255,255,255,0.08) 100%)`,
                     }}
                   />
                 </div>
