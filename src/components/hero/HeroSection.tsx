@@ -14,13 +14,13 @@ import {
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative pt-8 pb-16 border-b border-white/[0.06] overflow-hidden">
+    <section className="relative pt-6 sm:pt-10 pb-12 sm:pb-16 border-b border-white/[0.06] overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[300px] bg-[#d99b38]/10 blur-[130px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Trust Badges Row */}
-        <div className="flex flex-wrap items-center gap-2 mb-6">
+        <div className="flex flex-wrap items-center gap-2 mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#161a22] border border-white/[0.08] text-xs text-[#d1d5db]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#d99b38]" />
             <span>Referência em seminovos em Sumaré e região</span>
@@ -46,19 +46,20 @@ export const HeroSection: React.FC = () => {
         {/* Hero Grid: Headline Copy on Left + Car Showcase on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: High-converting proposition */}
-          <div className="lg:col-span-5 space-y-6">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15]">
+          <div className="lg:col-span-5 space-y-5 sm:space-y-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.18] sm:leading-[1.15]">
               Seu próximo carro com procedência garantida em Sumaré
             </h1>
 
-            <p className="text-base sm:text-lg text-[#9ca3af] leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-[#9ca3af] leading-relaxed">
               Veículos seminovos inspecionados com laudo cautelar 100% aprovado, revisão preventiva, garantia e condições diretas de financiamento ou troca com troco.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            {/* Mobile & Web Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
               <a
                 href="#vender"
-                className="px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold text-sm transition-all shadow-lg shadow-emerald-950/40 flex items-center gap-2"
+                className="w-full sm:w-auto px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold text-sm transition-all shadow-lg shadow-emerald-950/40 flex items-center justify-center gap-2"
               >
                 <Zap className="w-4 h-4 fill-white" />
                 <span>Vender meu usado (PIX)</span>
@@ -66,7 +67,7 @@ export const HeroSection: React.FC = () => {
 
               <a
                 href="#financiamento"
-                className="px-5 py-3 rounded-xl bg-[#14171d] hover:bg-[#1b1e26] border border-white/[0.08] text-[#d1d5db] hover:text-white font-medium text-sm transition-colors flex items-center gap-2"
+                className="w-full sm:w-auto px-5 py-3 rounded-xl bg-[#14171d] hover:bg-[#1b1e26] border border-white/[0.08] text-[#d1d5db] hover:text-white font-medium text-sm transition-colors flex items-center justify-center gap-2"
               >
                 <BadgeDollarSign className="w-4 h-4 text-[#d99b38]" />
                 <span>Simular financiamento</span>
@@ -74,7 +75,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Micro Guarantees */}
-            <div className="pt-4 border-t border-white/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-[#9ca3af]">
+            <div className="pt-3 sm:pt-4 border-t border-white/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 text-xs text-[#9ca3af]">
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-[#10b981] shrink-0" />
                 <span>Laudo cautelar 100%</span>
@@ -94,7 +95,7 @@ export const HeroSection: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col space-y-3">
             <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/80 bg-[#07080c] group">
               <div
-                className="relative w-full aspect-[1265/672] min-h-[260px] overflow-hidden"
+                className="relative w-full aspect-[16/10] sm:aspect-[1265/672] min-h-[240px] sm:min-h-[280px] overflow-hidden"
                 style={{ position: "relative" }}
               >
                 <Image
@@ -107,35 +108,35 @@ export const HeroSection: React.FC = () => {
                 />
 
                 {/* Subtle gradient vignettes for luxury feel */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#08090d]/95 via-[#08090d]/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08090d]/95 via-[#08090d]/30 to-transparent pointer-events-none" />
                 <div className="absolute inset-0 bg-gradient-to-b from-[#08090d]/40 via-transparent to-transparent pointer-events-none" />
 
-                {/* Top badges */}
-                <div className="absolute top-3.5 left-3.5 flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#08090d]/80 backdrop-blur-md border border-[#d99b38]/40 text-xs font-bold text-white uppercase tracking-wider">
-                    <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
+                {/* Top badges (Mobile-adaptive) */}
+                <div className="absolute top-3 left-3 sm:top-3.5 sm:left-3.5 flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[#08090d]/85 backdrop-blur-md border border-[#d99b38]/40 text-[10px] sm:text-xs font-bold text-white uppercase tracking-wider">
+                    <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-[#10b981] animate-pulse" />
                     MB Veículos • Sumaré
                   </span>
                 </div>
 
-                <div className="absolute top-3.5 right-3.5">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#08090d]/80 backdrop-blur-md border border-white/10 text-[11px] font-bold text-[#d99b38] uppercase tracking-wider">
+                <div className="absolute top-3 right-3 sm:top-3.5 sm:right-3.5">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[#08090d]/85 backdrop-blur-md border border-white/10 text-[10px] sm:text-[11px] font-bold text-[#d99b38] uppercase tracking-wider">
                     ★ Super Destaque
                   </span>
                 </div>
 
                 {/* Bottom title and approved badge */}
-                <div className="absolute bottom-3.5 left-4 right-4 flex items-end justify-between gap-4 pointer-events-none">
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-3.5 sm:left-4 sm:right-4 flex items-end justify-between gap-3 pointer-events-none">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#d99b38] block mb-0.5">
+                    <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#d99b38] block mb-0.5">
                       Seminovo Selecionado
                     </span>
-                    <h3 className="text-lg sm:text-2xl font-bold text-white drop-shadow-md">
+                    <h3 className="text-base sm:text-xl lg:text-2xl font-bold text-white drop-shadow-md leading-tight">
                       Qualidade & Procedência Garantida
                     </h3>
                   </div>
                   <div className="text-right shrink-0">
-                    <span className="px-3 py-1 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-xs font-bold backdrop-blur-md">
+                    <span className="px-2.5 sm:px-3 py-1 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-[10px] sm:text-xs font-bold backdrop-blur-md">
                       Laudo 100% Aprovado
                     </span>
                   </div>
@@ -144,7 +145,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Sub-card with Inspection & Direct WhatsApp Negotation */}
-            <div className="p-4 rounded-xl bg-[#12151e] border border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+            <div className="p-3.5 sm:p-4 rounded-xl bg-[#12151e] border border-white/[0.08] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 shadow-xl">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
                   <FileCheck2 className="w-5 h-5" />
@@ -159,7 +160,7 @@ export const HeroSection: React.FC = () => {
                     </span>
                   </div>
                   <p className="text-[11px] text-[#9ca3af] mt-0.5">
-                    Estrutura original, sem sinistros e sem leilão.
+                    Estrutura original, sem sinistros e sem histórico de leilão.
                   </p>
                 </div>
               </div>
@@ -180,39 +181,39 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Quiet Numerical Strip */}
-        <div className="mt-12 pt-8 border-t border-white/[0.06] grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-white/[0.06] grid grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6 text-center">
           <div className="space-y-1">
-            <span className="text-2xl font-bold text-white tabular-nums block">
+            <span className="text-xl sm:text-2xl font-bold text-white tabular-nums block">
               +{STORE_INFO.yearsActive} anos
             </span>
-            <span className="text-xs text-[#9ca3af]">
+            <span className="text-[11px] sm:text-xs text-[#9ca3af]">
               Tradição e seriedade em Sumaré
             </span>
           </div>
 
           <div className="space-y-1">
-            <span className="text-2xl font-bold text-[#d99b38] tabular-nums block">
+            <span className="text-xl sm:text-2xl font-bold text-[#d99b38] tabular-nums block">
               {STORE_INFO.googleRating}
             </span>
-            <span className="text-xs text-[#9ca3af]">
+            <span className="text-[11px] sm:text-xs text-[#9ca3af]">
               Nota média no Google Business
             </span>
           </div>
 
           <div className="space-y-1">
-            <span className="text-2xl font-bold text-[#60a5fa] tabular-nums block">
+            <span className="text-xl sm:text-2xl font-bold text-[#60a5fa] tabular-nums block">
               5/5
             </span>
-            <span className="text-xs text-[#9ca3af]">
+            <span className="text-[11px] sm:text-xs text-[#9ca3af]">
               Avaliação máxima no Facebook
             </span>
           </div>
 
           <div className="space-y-1">
-            <span className="text-2xl font-bold text-[#10b981] tabular-nums block">
+            <span className="text-xl sm:text-2xl font-bold text-[#10b981] tabular-nums block">
               100%
             </span>
-            <span className="text-xs text-[#9ca3af]">
+            <span className="text-[11px] sm:text-xs text-[#9ca3af]">
               Laudos cautelares periciados
             </span>
           </div>

@@ -72,17 +72,17 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
   ];
 
   return (
-    <section id="financiamento" className="py-20 border-b border-white/[0.06] relative overflow-hidden">
+    <section id="financiamento" className="py-14 sm:py-20 border-b border-white/[0.06] relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/4 w-[450px] h-[300px] bg-[#d99b38]/5 blur-[140px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 space-y-2 sm:space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#161a22] border border-white/[0.08] text-xs text-[#d99b38] font-semibold">
             <Calculator className="w-3.5 h-3.5" />
             <span>Simulador de Financiamento MB</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight">
             Calcule sua parcela estimada
           </h2>
           <p className="text-[#9ca3af] text-sm sm:text-base leading-relaxed">
@@ -91,17 +91,17 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
         </div>
 
         {/* Main Simulator Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch max-w-5xl mx-auto">
           {/* Controls Column */}
-          <div className="lg:col-span-7 p-6 sm:p-8 rounded-2xl bg-[#12141c] border border-white/[0.08] shadow-xl flex flex-col justify-between space-y-7">
-            <div className="space-y-7">
+          <div className="lg:col-span-7 p-5 sm:p-8 rounded-2xl bg-[#12141c] border border-white/[0.08] shadow-xl flex flex-col justify-between space-y-6 sm:space-y-7">
+            <div className="space-y-6 sm:space-y-7">
               {/* Slider 1: Valor do Veículo */}
               <div>
-                <div className="flex justify-between items-baseline mb-2.5">
+                <div className="flex justify-between items-baseline mb-2">
                   <label className="text-xs font-semibold uppercase tracking-wider text-[#9ca3af]">
-                    Valor estimado do veículo
+                    Valor do veículo
                   </label>
-                  <span className="text-xl font-bold text-white tabular-nums">
+                  <span className="text-lg sm:text-xl font-bold text-white tabular-nums">
                     {formatCurrency(vehiclePrice)}
                   </span>
                 </div>
@@ -129,9 +129,9 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
               <div>
                 <div className="flex justify-between items-baseline mb-2">
                   <label className="text-xs font-semibold uppercase tracking-wider text-[#9ca3af]">
-                    Valor de entrada ({downPaymentPercent}%)
+                    Entrada ({downPaymentPercent}%)
                   </label>
-                  <span className="text-xl font-bold text-[#d99b38] tabular-nums">
+                  <span className="text-lg sm:text-xl font-bold text-[#d99b38] tabular-nums">
                     {formatCurrency(downPaymentValue)}
                   </span>
                 </div>
@@ -150,9 +150,9 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
                   />
                 </div>
 
-                {/* Quick Presets Buttons */}
-                <div className="flex items-center gap-2 mt-2 pt-1">
-                  <span className="text-[11px] text-[#6b7280]">Sugestões:</span>
+                {/* Quick Presets Buttons (Mobile-wrapped) */}
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-2 pt-1">
+                  <span className="text-[11px] text-[#6b7280] mr-1">Sugestões:</span>
                   {[0, 20, 30, 50].map((preset) => (
                     <button
                       key={preset}
@@ -172,16 +172,16 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
 
               {/* Selector 3: Prazo / Parcelas */}
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#9ca3af] mb-2.5">
+                <label className="block text-xs font-semibold uppercase tracking-wider text-[#9ca3af] mb-2 sm:mb-2.5">
                   Número de parcelas
                 </label>
-                <div className="grid grid-cols-5 gap-2">
+                <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
                   {[12, 24, 36, 48, 60].map((term) => (
                     <button
                       key={term}
                       type="button"
                       onClick={() => setMonths(term)}
-                      className={`py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all ${
+                      className={`py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition-all ${
                         months === term
                           ? "bg-[#d99b38] text-[#08090d] border-[#d99b38] shadow-md shadow-[#d99b38]/25 scale-[1.02]"
                           : "bg-white/[0.03] text-[#9ca3af] border-white/[0.06] hover:bg-white/[0.06] hover:text-white"
@@ -201,7 +201,7 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
           </div>
 
           {/* Result Calculation Column */}
-          <div className="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-[#161a26] to-[#0e1017] border border-[#d99b38]/30 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+          <div className="lg:col-span-5 p-5 sm:p-8 rounded-2xl bg-gradient-to-b from-[#161a26] to-[#0e1017] border border-[#d99b38]/30 shadow-2xl flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 w-36 h-36 bg-[#d99b38]/10 rounded-full blur-2xl pointer-events-none" />
 
             <div>
@@ -209,27 +209,27 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
                 <Sparkles className="w-3.5 h-3.5" />
                 Resultado da Simulação
               </div>
-              <h3 className="text-xl font-bold text-white mb-6">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-5 sm:mb-6">
                 Condição Personalizada
               </h3>
 
-              <div className="space-y-3 mb-6 text-xs sm:text-sm">
-                <div className="flex justify-between py-2 border-b border-white/[0.05] text-[#9ca3af]">
+              <div className="space-y-2.5 sm:space-y-3 mb-5 sm:mb-6 text-xs sm:text-sm">
+                <div className="flex justify-between py-1.5 sm:py-2 border-b border-white/[0.05] text-[#9ca3af]">
                   <span>Valor do Veículo:</span>
                   <span className="font-bold text-white tabular-nums">{formatCurrency(vehiclePrice)}</span>
                 </div>
-                <div className="flex justify-between py-2 border-b border-white/[0.05] text-[#9ca3af]">
+                <div className="flex justify-between py-1.5 sm:py-2 border-b border-white/[0.05] text-[#9ca3af]">
                   <span>Entrada ({downPaymentPercent}%):</span>
                   <span className="font-bold text-[#d99b38] tabular-nums">{formatCurrency(downPaymentValue)}</span>
                 </div>
-                <div className="flex justify-between py-2 border-b border-white/[0.05] text-[#9ca3af]">
+                <div className="flex justify-between py-1.5 sm:py-2 border-b border-white/[0.05] text-[#9ca3af]">
                   <span>Saldo a Financiar:</span>
                   <span className="font-bold text-gray-200 tabular-nums">{formatCurrency(financedAmount)}</span>
                 </div>
               </div>
 
               {/* Big Estimate Box */}
-              <div className="p-5 rounded-2xl bg-[#090b10] border border-white/[0.08] text-center mb-6 shadow-inner">
+              <div className="p-4 sm:p-5 rounded-2xl bg-[#090b10] border border-white/[0.08] text-center mb-5 sm:mb-6 shadow-inner">
                 <span className="text-[11px] font-semibold text-[#9ca3af] uppercase tracking-wider block mb-1">
                   Parcela Estimada ({months}x)
                 </span>
@@ -254,20 +254,22 @@ Gostaria de verificar a aprovação do meu CPF com os bancos credenciados.`
         </div>
 
         {/* Banking Partners strip */}
-        <div className="mt-14 max-w-4xl mx-auto">
-          <div className="text-center mb-5">
+        <div className="mt-12 sm:mt-14 max-w-4xl mx-auto">
+          <div className="text-center mb-4 sm:mb-5">
             <span className="text-xs font-bold uppercase tracking-wider text-[#6b7280]">
               Instituições Financeiras Parceiras
             </span>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5 sm:gap-3">
             {banks.map((b, i) => (
               <div
                 key={i}
-                className="p-3.5 rounded-xl bg-[#12141c] border border-white/[0.06] hover:border-[#d99b38]/30 text-center transition-all flex flex-col items-center justify-center group"
+                className={`p-3 sm:p-3.5 rounded-xl bg-[#12141c] border border-white/[0.06] hover:border-[#d99b38]/30 text-center transition-all flex flex-col items-center justify-center group ${
+                  i === 4 ? "col-span-2 sm:col-span-1" : ""
+                }`}
               >
-                <Building2 className="w-5 h-5 text-[#d99b38] mb-1.5 group-hover:scale-110 transition-transform" />
+                <Building2 className="w-4 sm:w-5 h-4 sm:h-5 text-[#d99b38] mb-1 group-hover:scale-110 transition-transform" />
                 <span className="text-xs font-bold text-white block">{b.name}</span>
                 <span className="text-[10px] text-[#9ca3af] mt-0.5">{b.detail}</span>
               </div>
